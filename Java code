@@ -1,0 +1,24 @@
+// Максимум из двух чисел
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+      int a = 50;
+      int b = 130;
+
+      if(a > b) 
+        System.out.println(a);
+      else 
+        System.out.println(b);
+
+      int c = -50;
+      int d = -30;
+
+      if(c > d) 
+        System.out.println(c);
+      else 
+        System.out.println(d);
+  }
+}
