@@ -1,0 +1,28 @@
+// task 12 гр. открыл счет в банке,вложив 1000руб. Через каждый месяц размер вклада увеличивается на 2% от имеющейся суммы. Определить:
+// 1. за какой месяц величина ежемесячного увеличения вклада превысит 30 руб.
+// 2. через сколько месяцев размер вклада превысит 1200р
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      double d = 1000;
+      double d1 = 1000;
+      int sumI = 0;
+      int sumM = 0;
+     double profit = 0;
+     while (d<1200) {
+       d = d * 1.02;
+       sumI++;
+      
+    }
+    System.out.println("Вклад увеличится до 1200 на "  +sumI+   "  месяце");
+    do {
+      profit=d1*0.02;
+      d1=d1+profit;
+      sumM++;}
+      while (profit<30);
+      System.out.println("Увелечение на 30р. наступит на  "+sumM+"  месяце");
+    }
+    
+  }
+  
