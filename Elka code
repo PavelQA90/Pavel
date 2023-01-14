@@ -1,0 +1,24 @@
+import java.util.*; 
+import java.util.Scanner;
+
+public class Main {
+
+  
+    public static void main(String[] args) {
+      Scanner sc = new Scanner (System.in);
+      String symb = sc.next();
+      int rows = sc.nextInt();
+      Elka (symb,rows);
+    }
+    public static void Elka (String s, int r){
+      int count = r;
+      String s1=s;
+      for (int i=0;i<r;i++)
+      {for (int j=count-1;j>0;j-- ){System.out.print(" ");}
+      System.out.println(s1);
+      count--;
+      s1+=s+s;
+    } 
+      
+  }
+}
