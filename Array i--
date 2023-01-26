@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+   public static void printArray(int[] array){
+     for (int i = array.length-1; i > -1; i--){
+       System.out.print(array[i] + "  ");
+       
+     }
+     
+     System.out.println();
+     
+   }
+   public static void main (String[]args){
+     
+     int[] array2 = {2,3,4,5,6,7,8,9,0,24,55};
+     printArray(array2);
+   }
+}
