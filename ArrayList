@@ -1,0 +1,64 @@
+import java.util.*;
+import java.util.ArrayList;
+
+public class Main {
+  public static void print(ArrayList<String> list){
+    for(int i = 0; i < list.size(); i++){
+      System.out.print(list.get(i)+" ; ");
+    }
+    System.out.println();
+  }
+    
+    public static void swap(ArrayList<String> list,String name1, String name2){
+    if((list.contains(name1) == true) && (list.contains(name2) == true)){
+      
+      int indexOne = list.indexOf(name1);
+      int indexTwo = list.indexOf(name2);
+      
+      list.set(indexOne, name2);
+      list.set(indexTwo, name1);
+      
+    }
+    
+    }
+    
+    public static void main(String[] args) {
+      
+      ArrayList<String> list = new ArrayList();
+      
+       list.add("Ragnar");
+       list.add("Lagertha");
+      print(list);
+      
+      list.add(0,"Sigi");
+      print(list);
+      
+      list.add(2,"Rollo");
+      print(list);
+      // Вставка в середину списка
+      list.add(list.size()/2,"Helga");
+      print(list);
+      // Замена
+      list.set(4,"Floki");
+      print(list);
+      // Удаление
+      list.remove(3);
+      print(list);
+      
+      list.remove("Lagetha");
+      print(list);
+      
+      swap(list, "Lagertha", "Helga");
+      print(list);
+      swap(list, "Lagertha", "Rollo");
+      print(list);
+      swap(list, "Helga", "Lagertha");
+      print(list);
+      swap(list, "Sigi", "Floki");
+      print(list);
+      
+      
+      
+      
+  }
+}
