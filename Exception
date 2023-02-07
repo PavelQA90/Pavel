@@ -1,0 +1,88 @@
+import java.util.*;
+
+public class Main {
+  
+  public static int division (int a, int b) throws ArithmeticException {
+    
+    try {
+      int c = a / b;
+      return c;
+    }
+    catch(ArithmeticException e){
+
+    throw new ArithmeticException("Делить на ноль нельзя!");
+    }
+  }
+  
+    public static void main(String[] args) {
+     
+     int a = 10;
+     int b = 5;
+     
+     System.out.println(division (a, b));
+     
+     int x = 10;
+     int y = 0;
+    
+    
+    import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+int[] array = new int[5];
+
+try{
+  array[0] = 4;
+  array[5] = 7;
+  array[4] = 5 / 0;
+}
+catch(ArrayIndexOutOfBoundsException ai){
+  System.out.println("ArrayIndexOutOfBoundsException!");
+  }
+  catch(ArithmeticException ae){
+  System.out.println("ArithmeticException!");
+  }
+  
+catch(Exception e){
+  System.out.println("Exception");
+}
+}
+
+}
+
+
+import java.util.*;
+
+public class Main {
+    public static void method1() {
+  method2();  }
+  
+  public static void method2() {
+  method3();  }
+  
+  public static void method3() {
+    
+    try{
+    System.out.println(10 / 0);
+    }
+   catch(ArithmeticException ex){
+     ex.printStackTrace();
+   }
+   finally {
+     method4();
+   }
+    }
+  
+  public static void method4() {
+  method5();  }
+  
+  public static void method5() {
+  System.out.println("Done");  }
+  
+ 
+  public static void main(String[]args){
+    method1();
+    
+  }
+}
