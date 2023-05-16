@@ -14,3 +14,16 @@ INSERT INTO book (title, author, price, amount) VALUES ('Белая гварди
 INSERT INTO book (title, author, price, amount) VALUES ('Идиот', 'Достоевский Ф.М.', 460.00, 10);
 INSERT INTO book (title, author, price, amount) VALUES ('Братья Карамазовы', 'Достоевский Ф.М.',799.01, 2); 
 SELECT * FROM book;
+SELECT title, author, price FROM book;
+
+/*Выбрать названия книг и авторов из таблицы book, для поля title задать имя(псевдоним) Название, для поля author –  Автор. */
+
+SELECT title AS Название, author AS Автор FROM book;
+
+/* ля упаковки каждой книги требуется один лист бумаги, цена которого 1 рубль 65 копеек. 
+Посчитать стоимость упаковки для каждой книги (сколько денег потребуется, чтобы упаковать все экземпляры книги). 
+В запросе вывести название книги, ее количество и стоимость упаковки, последний столбец назвать pack. */
+
+SELECT title, amount,
+       amount * 1.65 AS pack
+FROM book;
