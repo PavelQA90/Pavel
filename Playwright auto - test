@@ -1,0 +1,31 @@
+// npx playwright codegen demo.playwright.dev/todomvc
+test('test', async ({ page }) => {
+
+  await page.goto('https://www.gismeteo.ru/');
+  // локатор для кнопки 'Москва'
+  const getStarted = page.getByRole('link', { name: 'Москва' });
+  await getStarted.click();
+  await expect(page).toHaveURL(/.*moscow/);
+  
+  await page.getByRole('link', { name: 'Завтра', exact: true }).click();
+  await page.getByRole('link', { name: '3 дня' }).click();
+  await page.getByRole('link', { name: 'Месяц' }).click();
+  await page.getByRole('link', { name: 'Новости', exact: true }).click();
+  await page.getByRole('link', { name: 'Карты' }).click();
+  await page.getByRole('link', { name: 'Информеры' }).click();
+  await page.getByRole('link', { name: 'Приложения' }).click();
+  await page.getByRole('link', { name: 'Для мобильных устройств' }).click();
+  await page.getByRole('link', { name: 'Gismeteo' }).click();
+});
+// Авторизация
+test('authorization', async ({ page }) => {
+  await page.goto('https://www.sports.ru/');
+  // ожидание входа (ms) test.setTimeout(30000);   
+  await page.getByRole('link', { name: 'Вход' }).click();
+  await page.locator('form').filter({ hasText: 'Авторизация Войдите на сайт, чтобы оценить посты и комментарии. Забыли пароль? З' }).getByPlaceholder('Ваш e-mail').click();
+  await page.locator('form').filter({ hasText: 'Авторизация Войдите на сайт, чтобы оценить посты и комментарии. Забыли пароль? З' }).getByPlaceholder('Ваш e-mail').fill('puzov.pavel@bk.ru');
+  await page.getByPlaceholder('Ваш пароль').click();
+  await page.getByPlaceholder('Ваш пароль').fill('q12345');
+  await page.getByRole('button', { name: 'Войти' }).click();
+  await page.getByRole('link', { name: 'Новости', exact: true }).click();
+});
