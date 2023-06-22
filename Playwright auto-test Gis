@@ -1,0 +1,15 @@
+// npx playwright codegen demo.playwright.dev/todomvc
+test('test', async ({ page }) => {
+
+  await page.goto('https://www.gismeteo.ru/');
+  await page.getByRole('link', { name: 'Москва' }).click();
+  await page.getByRole('link', { name: 'Завтра', exact: true }).click();
+  await page.getByRole('link', { name: '3 дня' }).click();
+  await page.getByRole('link', { name: 'Месяц' }).click();
+  await page.getByRole('link', { name: 'Новости', exact: true }).click();
+  await page.getByRole('link', { name: 'Карты' }).click();
+  await page.getByRole('link', { name: 'Информеры' }).click();
+  await page.getByRole('link', { name: 'Приложения' }).click();
+  await page.getByRole('link', { name: 'Для мобильных устройств' }).click();
+  await page.getByRole('link', { name: 'Gismeteo' }).click();
+});
